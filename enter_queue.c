@@ -1,4 +1,4 @@
-#define _GNU_SOURCE
+#define gettid() syscall(SYS_gettid) // workaround for glibc older than 2.30
 
 #include <unistd.h>
 #include <sys/types.h>
