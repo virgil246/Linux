@@ -52,8 +52,9 @@ void main()
     sprintf(str, "process %d is added into wait queue project2_queue_%d the %d th time at time %ld\n", ttid, random_num, count++, t2.tv_sec);
     //write the string stored in array str[] into file file_gettid.
     fwrite(str, 1, strlen(str)+1, fptr);
-    syscall(355, random_num); 
-                       
+    
+    int s=syscall(355, random_num); 
+    printf("%d",s);                   
 
     } 
     fclose(fptr);
