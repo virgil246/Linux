@@ -49,21 +49,21 @@ void main()
     //write the string stored in array str[] into file file_gettid;
     fwrite(str, 1, strlen(str)+1, fptr);
     
-    syscall(356, random_num1); //clean_wait_queue(random_num1);                        
+    syscall(352, random_num1); //clean_wait_queue(random_num1);                        
 
     } 
 
-    syscall(356, 1);
+    syscall(352, 1);
     //write the string "Clean wait wait queue project2_queue_1" into file file_gettid;
     sprintf(str, "Wake up all process in the project2_queue_1 at time %ld\n", t2.tv_sec);
     fwrite(str, 1, strlen(str)+1, fptr);
 
-    syscall(356, 2); 
+    syscall(352, 2); 
     //write the string "Clean wait wait queue project2_queue_2" into file file_gettid;
     sprintf(str, "Wake up all process in the project2_queue_2 at time %ld\n", t2.tv_sec);
     fwrite(str, 1, strlen(str)+1, fptr);
 
-    syscall(356, 3); 
+    syscall(352, 3); 
     //write the string "Clean wait wait queue project2_queue_3" into file file_gettid;
     sprintf(str, "Wake up all process in the project2_queue_3 at time %ld\n", t2.tv_sec);
     fwrite(str, 1, strlen(str)+1, fptr);

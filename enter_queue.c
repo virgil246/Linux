@@ -53,7 +53,7 @@ void main()
     //write the string stored in array str[] into file file_gettid.
     fwrite(str, 1, strlen(str)+1, fptr);
     
-    int s=syscall(355, random_num); 
+    int s=syscall(351, random_num); 
     printf("%d",s);                   
 
     } 
