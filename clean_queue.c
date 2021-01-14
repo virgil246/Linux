@@ -63,7 +63,7 @@ void main()
     sprintf(str, "Wake up all process in the project2_queue_2 at time %ld\n", t2.tv_sec);
     fwrite(str, 1, strlen(str)+1, fptr);
 
-    syscall(356, 2); 
+    syscall(356, 3); 
     //write the string "Clean wait wait queue project2_queue_3" into file file_gettid;
     sprintf(str, "Wake up all process in the project2_queue_3 at time %ld\n", t2.tv_sec);
     fwrite(str, 1, strlen(str)+1, fptr);
