@@ -17,13 +17,13 @@ asmlinkage int sys_enter_wait_queue(int x)
         return 1;
         break;
     case 2:
-        printk("enqueue in queue1 %p \n", &project2_queue_2);
+        printk("enqueue in queue2 %p \n", &project2_queue_2);
         interruptible_sleep_on(&project2_queue_2);
 
         return 1; //
         break;
     case 3:
-        printk("enqueue in queue1 %p \n", &project2_queue_3);
+        printk("enqueue in queue3 %p \n", &project2_queue_3);
         interruptible_sleep_on(&project2_queue_3);
 
         return 1;
