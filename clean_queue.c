@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <sys/time.h>
 #include <math.h>
+#include <string.h>
 
 void main()
 {
@@ -45,27 +46,26 @@ void main()
 
     sprintf(str, "Wake up all processes in wait queue project2_queue_%d at time %ld\n", random_num1, t2.tv_sec);
     //write the string stored in array str[] into file file_gettid;
-    fwrite(str, 1, strlen(str)+1, filename);
-    enter_wait_queue(random_num);
+    fwrite(str, 1, strlen(str)+1, fptr);
     
-    syscall(352, random_num1); //clean_wait_queue(random_num1);                        
+    syscall(356, random_num1); //clean_wait_queue(random_num1);                        
 
     } 
 
-    syscall(352, 1);
+    syscall(356, 1);
     //write the string "Clean wait wait queue project2_queue_1" into file file_gettid;
     sprintf(str, "Wake up all process in the project2_queue_1 at time %ld\n", t2.tv_sec);
-    fwrite(str, 1, strlen(str)+1, filename);
+    fwrite(str, 1, strlen(str)+1, fptr);
 
-    syscall(352, 2); 
+    syscall(356, 2); 
     //write the string "Clean wait wait queue project2_queue_2" into file file_gettid;
     sprintf(str, "Wake up all process in the project2_queue_2 at time %ld\n", t2.tv_sec);
-    fwrite(str, 1, strlen(str)+1, filename);
+    fwrite(str, 1, strlen(str)+1, fptr);
 
-    syscall(352, 2); 
+    syscall(356, 2); 
     //write the string "Clean wait wait queue project2_queue_3" into file file_gettid;
     sprintf(str, "Wake up all process in the project2_queue_3 at time %ld\n", t2.tv_sec);
-    fwrite(str, 1, strlen(str)+1, filename);
+    fwrite(str, 1, strlen(str)+1, fptr);
     
     fclose(fptr);
     printf("process %d completes!\n", ttid); 

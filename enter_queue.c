@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <sys/time.h>
 #include <math.h>
+#include <string.h>
 
 void main()
 {
@@ -50,8 +51,9 @@ void main()
 
     sprintf(str, "process %d is added into wait queue project2_queue_%d the %d th time at time %ld\n", ttid, random_num, count++, t2.tv_sec);
     //write the string stored in array str[] into file file_gettid.
-    fwrite(str, 1, strlen(str)+1, filename);
-    enter_wait_queue(random_num);                        
+    fwrite(str, 1, strlen(str)+1, fptr);
+    syscall(355, random_num); 
+                       
 
     } 
     fclose(fptr);
