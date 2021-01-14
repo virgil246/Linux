@@ -6,19 +6,25 @@ DECLARE_WAIT_QUEUE_HEAD(project2_queue_1);
 DECLARE_WAIT_QUEUE_HEAD(project2_queue_2);
 DECLARE_WAIT_QUEUE_HEAD(project2_queue_3);
 
-asmlinkage int enter_wait_queue(int x){
+asmlinkage int sys_enter_wait_queue(int x){
     switch (x)
     {
     case 1:
         interruptible_sleep_on(&project2_queue_1);
+        printk("enqueue in queue1\n");
+
         return 1;
         break;
     case 2:
         interruptible_sleep_on(&project2_queue_2);
+        printk("enqueue in queue1\n");
+
         return 1; //
         break;    
     case 3:
         interruptible_sleep_on(&project2_queue_3);
+        printk("enqueue in queue1\n");
+
         return 1;
         break;   
     default:
