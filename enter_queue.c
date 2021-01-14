@@ -1,5 +1,4 @@
-#define gettid() syscall(SYS_gettid) // workaround for glibc older than 2.30
-
+#include <sys/syscall.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <stdlib.h>
@@ -7,6 +6,7 @@
 #include <sys/time.h>
 #include <math.h>
 #include <string.h>
+#define gettid() syscall(SYS_gettid) // workaround for glibc older than 2.30
 
 void main()
 {
