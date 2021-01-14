@@ -28,5 +28,8 @@ asmlinkage int sys_enter_wait_queue(int x)
 
         return 1;
         break;
+    default:
+        printk("Failed\n");
+        break;
     }
 }
